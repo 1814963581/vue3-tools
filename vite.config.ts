@@ -4,6 +4,7 @@ import { resolve } from 'path'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  base: '/vue3-tools/',
   plugins: [
     vue(),
     VitePWA({

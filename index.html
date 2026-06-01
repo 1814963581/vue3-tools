@@ -10,6 +10,16 @@
     <title>一站式效率工具平台</title>
   </head>
   <body>
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          var path = redirect.replace(location.origin + '/vue3-tools', '') || '/';
+          history.replaceState(null, null, path);
+        }
+      })();
+    </script>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
