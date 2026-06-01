@@ -1,6 +1,6 @@
 export const APP_NAME = '效率工具'
 
-export const APP_DESCRIPTION = '一站式效率工具平台'
+export const APP_DESCRIPTION = '效率工具平台'
 
 export const CATEGORY_MAP: Record<string, string> = {
   image: '图片工具',

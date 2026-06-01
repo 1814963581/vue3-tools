@@ -11,7 +11,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'og-image.png'],
       manifest: {
-        name: '一站式效率工具平台',
+        name: '效率工具平台',
         short_name: '效率工具',
         description: '精选在线工具集合，无需安装，开箱即用',
         theme_color: '#0a0b0e',

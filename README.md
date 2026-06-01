@@ -1,4 +1,4 @@
-# 一站式效率工具平台
+# 效率工具平台
 
 [![CI/CD](https://github.com/1814963581/vue3-tools/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/1814963581/vue3-tools/actions)
 [![Vue 3](https://img.shields.io/badge/Vue-3.4-brightgreen.svg)](https://vuejs.org/)
