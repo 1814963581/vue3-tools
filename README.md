@@ -1,8 +1,8 @@
-# ToolsHub - 精选在线工具集合
+# 一站式效率工具平台
 
-[![CI/CD](https://github.com/user/vue3-tools/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/user/vue3-tools/actions)
+[![CI/CD](https://github.com/1814963581/vue3-tools/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/1814963581/vue3-tools/actions)
 [![Vue 3](https://img.shields.io/badge/Vue-3.4-brightgreen.svg)](https://vuejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue.svg)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.1-646CFF.svg)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
@@ -10,7 +10,7 @@
 
 ## 在线演示
 
-[在线体验](https://your-username.github.io/vue3-tools/)
+[在线体验](https://1814963581.github.io/vue3-tools/)
 
 ## 工具列表
 
@@ -18,7 +18,6 @@
 
 | 工具 | 描述 |
 |------|------|
-| 证件照制作 | 在线制作各种尺寸证件照，智能识别并更换背景底色 |
 | 图片格式转换 | JPG、PNG、WEBP、BMP 图片格式互转，支持质量调节 |
 | 图片压缩 | 批量压缩图片，支持多种格式和自定义质量参数 |
 | 颜色转换器 | HEX、RGB、HSL 颜色格式快速转换，支持渐变生成 |
@@ -27,8 +26,8 @@
 
 | 工具 | 描述 |
 |------|------|
-| Markdown 编辑器 | 实时预览 Markdown 文档，支持多种主题样式导出 |
 | 文档格式转换 | PDF 与 Word 文档格式互转 |
+| Markdown 编辑器 | 实时预览 Markdown 文档，支持多种主题样式导出 |
 
 ### 开发工具
 
@@ -46,17 +45,18 @@
 | 剪贴板历史 | 管理剪贴板记录，快速复制历史内容 |
 | 单位换算器 | 长度、面积、体积、重量、温度、速度、数据存储等换算 |
 
+### 生活工具
+
+| 工具 | 描述 |
+|------|------|
+| 证件照制作 | 在线制作各种尺寸证件照，智能识别并更换背景底色 |
+| 倒计时器 | 多功能倒计时和闹钟，支持自定义音效 |
+
 ### 安全工具
 
 | 工具 | 描述 |
 |------|------|
 | 密码生成器 | 自定义规则生成强密码，支持批量创建 |
-
-### 生活工具
-
-| 工具 | 描述 |
-|------|------|
-| 倒计时器 | 多功能倒计时和闹钟，支持自定义音效 |
 
 ### 文字工具
 
@@ -70,10 +70,15 @@
 |------|------|------|
 | 核心框架 | Vue 3 (Composition API) | 3.4 |
 | 构建工具 | Vite | 5.1 |
-| 开发语言 | TypeScript | 5.4 |
+| 开发语言 | TypeScript | 5.3 |
 | 状态管理 | Pinia | 3.0 |
 | 路由 | Vue Router | 4.3 |
+| CSS 框架 | Tailwind CSS | 3.4 |
 | 样式方案 | SCSS + CSS Variables | - |
+| 工具库 | VueUse | 14.2 |
+| PDF 处理 | pdfjs-dist + jspdf | 5.7 / 4.2 |
+| Word 处理 | mammoth + docx | 1.12 / 9.6 |
+| 电子表格 | xlsx | 0.18 |
 | 单元测试 | Vitest + @vue/test-utils | 4.1 |
 | 代码规范 | ESLint | 8.57 |
 | PWA | vite-plugin-pwa | 1.2 |
@@ -86,6 +91,7 @@ vue3-tools/
 ├── .github/workflows/          # GitHub Actions CI/CD 流水线
 │   └── ci-cd.yml               # 构建、测试、部署自动化
 ├── public/                     # 静态资源（不经过构建处理）
+│   └── favicon.svg             # 网站图标
 ├── src/
 │   ├── assets/                 # 静态资源目录
 │   ├── components/             # 组件层
@@ -97,8 +103,25 @@ vue3-tools/
 │   │   │   ├── HeroSection.vue     # 首页头部区域
 │   │   │   ├── ToolCard.vue        # 工具卡片组件
 │   │   │   └── ToolsSection.vue    # 工具列表与筛选区域
-│   │   └── icons/              # 图标组件
-│   │       └── ToolIcons.vue       # 工具图标 SVG 组件
+│   │   ├── icons/              # 图标组件
+│   │   │   └── ToolIcons.vue       # 工具图标 SVG 组件
+│   │   └── tools/              # 工具组件（16 个工具）
+│   │       ├── Base64Codec.vue         # Base64 编解码
+│   │       ├── Base64ImageTool.vue     # Base64 图片工具
+│   │       ├── ClipboardHistory.vue    # 剪贴板历史
+│   │       ├── ColorConverter.vue      # 颜色转换器
+│   │       ├── CountdownTimer.vue      # 倒计时器
+│   │       ├── DocumentConverter.vue   # 文档格式转换
+│   │       ├── ImageCompressor.vue     # 图片压缩
+│   │       ├── ImageConverter.vue      # 图片格式转换
+│   │       ├── JsonFormatter.vue       # JSON 格式化
+│   │       ├── MarkdownEditor.vue      # Markdown 编辑器
+│   │       ├── PasswordGenerator.vue   # 密码生成器
+│   │       ├── PhotoMaker.vue          # 证件照制作
+│   │       ├── RegexTester.vue         # 正则表达式测试
+│   │       ├── StressReliever.vue      # 解压小工具
+│   │       ├── UnitConverter.vue       # 单位换算器
+│   │       └── WordCounter.vue         # 字数统计
 │   ├── composables/            # 组合式函数（逻辑层）
 │   │   ├── useCopyToClipboard.ts   # 剪贴板操作封装
 │   │   ├── useFileUpload.ts        # 文件上传（拖拽与选择）封装
@@ -117,7 +140,7 @@ vue3-tools/
 │   │   └── app.ts                 # 全局应用状态
 │   ├── styles/                 # 样式层
 │   │   ├── main.scss              # 全局样式入口
-│   │   └── variables.scss         # SCSS 变量与 Mixin 定义
+│   │   └── variables.scss         # SCSS 变量与响应式 Mixin
 │   ├── types/                  # 类型定义层
 │   │   └── index.ts               # 公共 TypeScript 接口定义
 │   ├── utils/                  # 工具函数层
@@ -125,31 +148,17 @@ vue3-tools/
 │   │   └── format.ts              # 格式化工具函数
 │   ├── views/                  # 视图层（页面）
 │   │   ├── HomeView.vue           # 首页
-│   │   ├── ToolDetailView.vue     # 工具详情页（动态组件加载）
-│   │   └── tools/                 # 工具组件目录
-│   │       ├── Base64Codec.vue        # Base64 编解码工具
-│   │       ├── Base64ImageTool.vue    # Base64 图片工具
-│   │       ├── ClipboardHistory.vue   # 剪贴板历史
-│   │       ├── ColorConverter.vue     # 颜色转换器
-│   │       ├── CountdownTimer.vue     # 倒计时器
-│   │       ├── DocumentConverter.vue  # 文档格式转换
-│   │       ├── ImageCompressor.vue    # 图片压缩
-│   │       ├── ImageConverter.vue     # 图片格式转换
-│   │       ├── JsonFormatter.vue      # JSON 格式化
-│   │       ├── MarkdownEditor.vue     # Markdown 编辑器
-│   │       ├── PasswordGenerator.vue  # 密码生成器
-│   │       ├── PhotoMaker.vue         # 证件照制作
-│   │       ├── RegexTester.vue        # 正则表达式测试
-│   │       ├── StressReliever.vue     # 解压小工具
-│   │       ├── UnitConverter.vue      # 单位换算器
-│   │       └── WordCounter.vue        # 字数统计
+│   │   └── ToolDetailView.vue     # 工具详情页（动态组件加载）
 │   ├── App.vue                 # 根组件
 │   ├── env.d.ts                # 环境类型声明
 │   └── main.ts                 # 应用入口（全局错误处理初始化）
 ├── .eslintrc.cjs               # ESLint 配置
+├── .gitignore                  # Git 忽略规则
 ├── index.html                  # HTML 入口
 ├── package.json                # 项目依赖与脚本
+├── package-lock.json           # 依赖版本锁定
 ├── tsconfig.json               # TypeScript 配置
+├── tsconfig.node.json          # Node 环境 TypeScript 配置
 ├── vite.config.ts              # Vite 构建配置（含 PWA）
 └── vitest.config.ts            # Vitest 测试配置
 ```
@@ -158,36 +167,37 @@ vue3-tools/
 
 ### 分层架构
 
-项目采用清晰的分层架构设计，严格遵循关注点分离原则：
+项目采用清晰的分层架构设计，严格遵循单一职责与关注点分离原则：
 
 ```
-┌─────────────────────────────────────────┐
-│              视图层 (views/)              │
-│    页面组件 + 工具组件，仅负责 UI 渲染      │
-├─────────────────────────────────────────┤
-│            组件层 (components/)            │
-│   通用组件 (common/) + 业务组件 (home/)    │
-├─────────────────────────────────────────┤
-│          逻辑层 (composables/)             │
-│   可复用业务逻辑：文件上传、剪贴板、存储等   │
-├─────────────────────────────────────────┤
-│          状态层 (stores/)                  │
-│          Pinia 全局状态管理                │
-├─────────────────────────────────────────┤
-│      服务层 (services/) + 数据层 (data/)   │
-│     日志服务、工具元数据、配置常量           │
-├─────────────────────────────────────────┤
-│         基础层 (utils/ + types/)           │
-│      纯函数工具 + TypeScript 类型定义       │
-└─────────────────────────────────────────┘
+┌─────────────────────────────────────────────────┐
+│               视图层 (views/)                     │
+│     页面组件，仅负责 UI 布局与路由级状态管理         │
+├─────────────────────────────────────────────────┤
+│             组件层 (components/)                  │
+│   通用组件 (common/) + 业务组件 (home/) + 工具组件   │
+│              (tools/)                            │
+├─────────────────────────────────────────────────┤
+│          逻辑层 (composables/)                    │
+│   可复用业务逻辑：文件上传、剪贴板、存储、错误处理等   │
+├─────────────────────────────────────────────────┤
+│          状态层 (stores/)                         │
+│          Pinia 全局状态管理                       │
+├─────────────────────────────────────────────────┤
+│      服务层 (services/) + 数据层 (data/)           │
+│     日志服务、工具元数据、配置常量                   │
+├─────────────────────────────────────────────────┤
+│         基础层 (utils/ + types/ + config/)        │
+│     纯函数工具 + TypeScript 类型定义 + 全局配置      │
+└─────────────────────────────────────────────────┘
 ```
 
 ### 关键设计模式
 
-- **单例模式**：日志服务 `Logger` 全局唯一实例
-- **策略模式**：`useFileUpload` 通过回调参数适配不同工具的文件处理逻辑
-- **组合式函数**：将跨组件共享逻辑封装为 Composable，实现逻辑复用
-- **动态组件加载**：`ToolDetailView` 使用 `import.meta.glob` 实现工具组件的自动发现与按需加载
+- **单例模式**：日志服务 `Logger` 全局唯一实例，确保日志输出一致性
+- **策略模式**：`useFileUpload` 通过回调参数适配不同工具的文件处理逻辑，5 个文件上传组件共享同一套拖拽/选择基础设施
+- **组合式函数**：将跨组件共享逻辑封装为 Composable，实现逻辑复用与关注点分离
+- **动态组件加载**：`ToolDetailView` 使用 `import.meta.glob` 实现工具组件的自动发现与按需加载，新增工具无需修改路由
 
 ## 快速开始
 
@@ -216,7 +226,7 @@ npm run dev
 npm run build
 ```
 
-构建产物输出至 `dist/` 目录。
+该命令会先执行 TypeScript 类型检查（`vue-tsc --noEmit`），通过后再进行 Vite 生产构建。构建产物输出至 `dist/` 目录。
 
 ### 预览
 
@@ -227,7 +237,7 @@ npm run preview
 ### 测试
 
 ```bash
-# 运行全部测试
+# 运行全部测试（单次执行）
 npm run test:unit
 
 # 监听模式（开发时使用）
@@ -243,6 +253,8 @@ npm run lint
 ## Composable 使用示例
 
 ### useFileUpload
+
+文件上传的通用封装，支持拖拽和点击选择两种方式，内置文件类型校验：
 
 ```typescript
 import { useFileUpload } from '@/composables/useFileUpload'
@@ -267,6 +279,8 @@ const {
 
 ### useCopyToClipboard
 
+剪贴板操作封装，提供复制状态反馈：
+
 ```typescript
 import { useCopyToClipboard } from '@/composables/useCopyToClipboard'
 
@@ -277,6 +291,8 @@ await copyWithStatus('要复制的文本内容')
 
 ### useStorage
 
+本地存储封装，支持自动序列化与反序列化：
+
 ```typescript
 import { useLocalStorage } from '@/composables/useStorage'
 
@@ -285,6 +301,8 @@ const theme = useLocalStorage('theme', 'dark')
 ```
 
 ### useKeyboard
+
+键盘快捷键封装，支持组合键：
 
 ```typescript
 import { useKeyboardShortcut } from '@/composables/useKeyboard'
@@ -296,18 +314,19 @@ useKeyboardShortcut('k', () => {
 
 ### useToolError
 
+统一错误处理封装，自动集成日志系统：
+
 ```typescript
 import { useToolError } from '@/composables/useToolError'
 
 const { message, set, clear, hasError } = useToolError('MyTool')
-set('格式错误', 'JSON 解析')
-// message.value 在模板中显示错误信息
-// 自动记录到日志系统
+set('格式错误', 'JSON 解析失败，请检查输入内容')
+// message.value 在模板中显示错误信息，同时自动记录到日志系统
 ```
 
 ## 日志系统
 
-项目内置结构化日志服务，支持四级日志级别：
+项目内置结构化日志服务，支持四级日志级别，生产环境自动降级以减少噪音：
 
 | 级别 | 生产环境 | 开发环境 | 用途 |
 |------|----------|----------|------|
@@ -316,7 +335,8 @@ set('格式错误', 'JSON 解析')
 | warn | 输出 | 输出 | 警告信息 |
 | error | 输出 | 输出 | 错误信息 |
 
-全局错误自动捕获：
+全局错误自动捕获覆盖以下场景：
+
 - Vue 应用级错误（`app.config.errorHandler`）
 - 路由导航错误（`router.onError`）
 - 未捕获的 Promise 拒绝（`unhandledrejection`）
@@ -324,21 +344,21 @@ set('格式错误', 'JSON 解析')
 
 ## PWA 支持
 
-项目配置了完整的 PWA 支持：
+项目配置了完整的 PWA 支持，安装后即可离线使用：
 
-- 离线访问（Service Worker 缓存）
+- 离线访问（Service Worker 缓存策略）
 - 添加到主屏幕（Web App Manifest）
 - 自动更新（`registerType: 'autoUpdate'`）
 
 ## CI/CD
 
-通过 GitHub Actions 实现自动化流水线：
+通过 GitHub Actions 实现自动化流水线，确保每次提交的质量：
 
 1. **类型检查**：`vue-tsc --noEmit`
 2. **代码规范检查**：ESLint
 3. **单元测试**：Vitest
 4. **生产构建**：Vite build
-5. **自动部署**：GitHub Pages（main / master 分支推送时触发）
+5. **自动部署**：GitHub Pages（main 分支推送时触发）
 
 ## 贡献指南
 
@@ -350,9 +370,11 @@ set('格式错误', 'JSON 解析')
 
 ### 新增工具指南
 
-1. 在 `src/views/tools/` 下创建工具组件文件（如 `NewTool.vue`）
+只需三步即可添加新工具，无需修改路由或框架代码：
+
+1. 在 `src/components/tools/` 下创建工具组件文件（如 `NewTool.vue`）
 2. 在 `src/data/tools.ts` 的 `tools` 数组中添加工具元数据，设置 `component` 字段为组件名
-3. 无需修改路由或 ToolDetailView，系统会自动发现并加载新工具
+3. 系统会通过 `import.meta.glob` 自动发现并加载新工具
 
 ## 许可证
 
